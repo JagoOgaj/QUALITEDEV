@@ -2,6 +2,8 @@ import org.example.StatistiqueIMPL;
 import org.example.Voiture;
 import org.junit.jupiter.api.Test;
 
+import java.util.Objects;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 public class VoitureTest {
@@ -20,8 +22,8 @@ public class VoitureTest {
     @Test
     void testVoitures(){
         assertAll("voitures",
-                ()-> assertTrue(voiture.getMarque() == "Porche" && voiture.getPrix() == 300),
-                ()-> assertTrue(voiture2.getMarque() == "Porche2" && voiture2.getPrix() == 300)
+                ()-> assertTrue(Objects.equals(voiture.getMarque(), "Porche") && voiture.getPrix() == 300),
+                ()-> assertTrue(Objects.equals(voiture2.getMarque(), "Porche2") && voiture2.getPrix() == 300)
                 );
     }
 
