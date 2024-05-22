@@ -32,6 +32,7 @@ public class VoitureTest {
         assertTrue(statistiqueIMPL.prixMoyen()  == 300);
     }
 
+
     @Test
     void exceptionTesting(){
         Exception exception = assertThrows(ArithmeticException.class, () -> statistiqueIMPL2.prixMoyen());
