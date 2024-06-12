@@ -27,4 +27,8 @@ public class StatistiqueIMPL implements Statistique{
         }
         return prixMoyen/voitures.size();
     }
+
+    public ArrayList<Voiture> getVoitures(){
+        return voitures;
+    }
 }

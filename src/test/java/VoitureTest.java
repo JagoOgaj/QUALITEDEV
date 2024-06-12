@@ -32,6 +32,7 @@ public class VoitureTest {
         statistiqueIMPL.ajouter(voiture);
         statistiqueIMPL.ajouter(voiture2);
         assertTrue(statistiqueIMPL.prixMoyen()  == 300);
+        assertTrue(statistiqueIMPL.getVoitures().size() == 2);
     }
 
 
