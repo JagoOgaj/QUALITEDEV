@@ -14,14 +14,11 @@ jobs:
       - name: Set up JDK 22
         uses: actions/setup-java@v3
         with:
-          java-version: '22.0.1'
-          distribution: 'temurin'
+          java-version: '21.O.3'
+          distribution: 'corretto'
 
       - name: Grant execute permission for gradlew
         run: chmod +x gradlew
 
       - name: Build with Gradle
         run: ./gradlew build
-
-      - name: Run tests with Gradle
-        run: ./gradlew test
