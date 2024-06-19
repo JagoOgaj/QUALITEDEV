@@ -18,14 +18,21 @@ public class StatistiqueIMPL implements Statistique{
 
     @Override
     public float prixMoyen() throws ArithmeticException {
-        float prixMoyen = 0;
-        for(Voiture voiture : this.voitures){
-            prixMoyen+= voiture.getPrix();
+        if (voitures.size() == 0) {
+            throw new ArithmeticException("Divided by 0");
         }
-        if(voitures.size() == 0){
-            throw  new ArithmeticException("Divided by 0");
+
+        float prixTotal = 0;
+        int nombreVoitures = voitures.size();
+
+        for (int i = 0; i < nombreVoitures; i++) {
+            float prix = voitures.get(i).getPrix();
+            int nombreLotsDeCinq = (i + 1) / 5; // Nombre de lots de 5 voitures
+            float remise = Math.min(nombreLotsDeCinq * 0.05f * prix, 20000); // Calcul de la remise avec une remise maximale de 20 000 euros
+            prixTotal += (prix - remise);
         }
-        return prixMoyen/voitures.size();
+
+        return prixTotal / nombreVoitures;
     }
 
     public ArrayList<Voiture> getVoitures(){

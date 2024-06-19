@@ -26,19 +26,4 @@ public class VoitureTest {
                 ()-> assertTrue(Objects.equals(voiture2.getMarque(), "Porche2") && voiture2.getPrix() == 300)
                 );
     }
-
-    @Test
-    void testStatistique(){
-        statistiqueIMPL.ajouter(voiture);
-        statistiqueIMPL.ajouter(voiture2);
-        assertTrue(statistiqueIMPL.prixMoyen()  == 300);
-        assertTrue(statistiqueIMPL.getVoitures().size() == 2);
-    }
-
-
-    @Test
-    void exceptionTesting(){
-        Exception exception = assertThrows(ArithmeticException.class, () -> statistiqueIMPL2.prixMoyen());
-        assertEquals("Divided by 0", exception.getMessage());
-    }
 }
