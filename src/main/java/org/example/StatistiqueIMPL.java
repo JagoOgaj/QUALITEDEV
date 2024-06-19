@@ -18,7 +18,7 @@ public class StatistiqueIMPL implements Statistique{
 
     @Override
     public float prixMoyen() throws ArithmeticException {
-        if (voitures.size() == 0) {
+        if (voitures.isEmpty()) {
             throw new ArithmeticException("Divided by 0");
         }
 
