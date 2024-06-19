@@ -4,7 +4,6 @@ public class Voiture {
     private String marque;
     private int prix;
 
-    public Voiture(){}
 
     public Voiture(String marque, int prix){
         this.marque = marque;
