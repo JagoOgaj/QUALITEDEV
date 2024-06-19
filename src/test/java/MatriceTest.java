@@ -55,5 +55,4 @@ public class MatriceTest {
     public void testCalculPrixMoyenAucuneVoiture() {
         assertThrows(ArithmeticException.class, () -> statistique.prixMoyen());
     }
-
 }
